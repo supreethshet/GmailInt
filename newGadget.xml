@@ -31,7 +31,7 @@ debugger;
 
  $.ajax({
                     type: "POST",
-                    url: "https://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest",
+                    url: "https://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest/account/login",
                     data: { password: "Sep$2016", username: "sshet" },
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
