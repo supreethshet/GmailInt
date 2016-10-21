@@ -39,7 +39,8 @@ debugger;
                         'pivotalEnvironmentName': 'UX Production',
                         'demoUser': 'False',                        
                         'timeZoneOffset': '',                        
-                        'Content-Type': 'application/json; charset=UTF-8',                                              
+                        'Content-Type': 'application/json; charset=UTF-8',     
+                                         
                     },
                     success: function (data) {
                         console.log('succes: ' + data);
