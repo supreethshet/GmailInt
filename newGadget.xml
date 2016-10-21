@@ -11,7 +11,7 @@
     <Require feature="dynamic-height"/>
 
     <Require feature="google.contentmatch">
-      <Param name="extractors">google.com:SubjectExtractor,google.com:RawSubjectExtractor</Param>
+      <Param name="extractors">google.com:SubjectExtractor</Param>
     </Require>
 
   </ModulePrefs>
