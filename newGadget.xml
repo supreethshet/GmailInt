@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs title="In Gadget"
+    description="Pivotal CRM"
+    height="220"
+    author="Pivotal"
+    author_email="pivotal.aptean@mypivotalcrm.in"
+    author_location="In Gadget, Earth">
+
+    <!-- This one is not specific to Gmail contextual gadgets. -->
+    <Require feature="dynamic-height"/>
+
+    <Require feature="google.contentmatch">
+      <Param name="extractors">google.com:SubjectExtractor</Param>
+    </Require>
+
+  </ModulePrefs>
+
+  <Content type="html" view="card">
+    <![CDATA[
+      <!-- Start with Single Sign-On -->
+      <script type="text/javascript">
+
+        <!-- Fetch the array of content matches. -->
+        matches = google.contentmatch.getContentMatches();
+        var matchList = document.createElement('UL');
+        var listItem;
+        var extractedText;
+
+        <!-- Iterate through the array and display output for each match. -->
+        for (var match in matches) {
+          for (var key in matches[match]) {
+            listItem = document.createElement('LI');
+            extractedText = document.createTextNode(key + ": " + matches[match][key]);
+            listItem.appendChild(extractedText);
+            matchList.appendChild(listItem);
+          }
+        }
+        document.body.appendChild(matchList);
+        gadgets.window.adjustHeight(100);
+      </script>
+    ]]>
+  </Content>
+</Module>
