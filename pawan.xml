@@ -21,7 +21,7 @@
       <!-- Start with Single Sign-On -->
       hello card
 <script type="text/javascript">
-
+debugger;
         <!-- Fetch the array of content matches. -->
         matches = google.contentmatch.getContentMatches();
         var matchList = document.createElement('UL');
