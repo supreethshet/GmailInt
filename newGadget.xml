@@ -38,11 +38,11 @@ debugger;
                     headers: {                     
                         'pivotalEnvironmentName': 'UX Production',
                         'demoUser': 'False',
-                        'Host': 'ws003lt1750prd.swg.cdc.root',
+                        
                         'timeZoneOffset': '',
-                        'Expect': 'application/json,100-continue',
+                        
                         'Content-Type': 'application/json; charset=UTF-8',
-                        'Content-Length': '41'                        
+                                              
                     },
                     success: function (data) {
                         console.log('succes: ' + data);
