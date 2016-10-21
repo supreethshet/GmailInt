@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs title="PawanCrm"
+    description="Pivotal"
+    height="220"
+    author="pawan"
+    author_email="pivotal.aptean@mypivotalcrm.in"
+    author_location="In Gadget, Earth">
+
+    <!-- This one is not specific to Gmail contextual gadgets. -->
+    <Require feature="dynamic-height"/>
+	<Require feature="opensocial-0.8" />
+    <Require feature="google.contentmatch">
+      <Param name="extractors">google.com:SubjectExtractor</Param>
+    </Require>
+
+  </ModulePrefs>
+
+  <Content type="html" view="card">
+    <![CDATA[
+      <!-- Start with Single Sign-On -->
+      hello card
+    ]]>
+  </Content>
+  
+    <Content type="html" view="canvas">
+    <![CDATA[
+      <!-- Start with Single Sign-On -->
+      hello canvas
+    ]]>
+  </Content>
+  
+    <Content type="html" view="home">
+    <![CDATA[
+      <!-- Start with Single Sign-On -->
+      hello home
+    ]]>
+  </Content>
+</Module>
