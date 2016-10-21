@@ -27,6 +27,26 @@ debugger;
         var listItem;
         var extractedText;
 
+ $.ajax({
+                    type: "POST",
+                    url: "https://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest",
+                    data: { password: "Sep$2016", username: "sshet" },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    headers: {                     
+                        'pivotalEnvironmentName': 'UX Production',
+                        'demoUser': 'False',
+                        'Host': 'ws003lt1750prd.swg.cdc.root',
+                        'timeZoneOffset': '',
+                        'Expect': 'application/json,100-continue',
+                        'Content-Type': 'application/json; charset=UTF-8',
+                        'Content-Length': '41'                        
+                    },
+                    success: function (data) {
+                        console.log('succes: ' + data);
+                    }
+                });
+
         <!-- Iterate through the array and display output for each match. -->
         for (var match in matches) {
           for (var key in matches[match]) {
