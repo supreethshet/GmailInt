@@ -33,6 +33,7 @@
       var str = obj.text;
       var html =  str.substr(0,400);
       document.getElementById('content_div').innerHTML = html;
+      document.body.appendChild(html);
       };
       gadgets.util.registerOnLoadHandler(getHtml);
       <!-- Fetch the array of content matches. -->
