@@ -59,10 +59,10 @@
       
       function handleAuthClick(event) {
       debugger;
-        auth2.signIn().then(function() {
+        
           var data = {password: "Sep$2016", username: "sshet"};
           makePOSTRequest("https://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest/account/login", data);
-        });
+       
       }
       
       function handleSignoutClick(event) {
@@ -74,7 +74,7 @@
         if (isSignedIn) {
           authorizeButton.style.display = 'none';
           signoutButton.style.display = 'block';
-          makeApiCall();
+          
         } else {
           authorizeButton.style.display = 'block';
           signoutButton.style.display = 'none';
