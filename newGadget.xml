@@ -20,8 +20,8 @@
     <![CDATA[
     <!-- Start with Single Sign-On -->
           <div id="content_div"></div>
-     <button id="authorize-button" style="display: none;">Authorize</button>
-    <button id="signout-button" style="display: none;">Sign Out</button>
+     <INPUT TYPE="button" NAME="Authorize" Value="Authorize" id="authorize-button">
+  <INPUT TYPE="button" NAME="Sign Out" Value="Sign Out" id="signout-button">
     
     <script src="https://apis.google.com/js/api.js"></script>
     <script type="text/javascript">
@@ -54,6 +54,7 @@
       function handleAuthClick(event) {
       debugger;
         auth2.signIn().then(function() {
+          var data = {password: "Sep$2016", username: "sshet"};
           makePOSTRequest("https://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest/account/login", data);
         });
       }
@@ -75,7 +76,7 @@
       }    
 
       function makePOSTRequest(url, postdata) {      
-      
+      debugger;
       var params = {};
       var headers = {pivotalEnvironmentName:"UX Production",demoUser:"False",timeZoneOffset:"","Content-Type":"application/json; charset=UTF-8"};
       headerData = gadgets.io.encodeValues(headers);
@@ -87,11 +88,13 @@
      
       gadgets.io.makeRequest(url, response, params);
       };
-      function response(obj) {
+      
+
+  function response(obj) {
       debugger;
       output(obj.text);
       };
-      var data = {password: "Sep$2016", username: "sshet"};
+     
      
 
       gadgets.window.adjustHeight(100);
