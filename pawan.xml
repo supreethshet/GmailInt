@@ -10,6 +10,7 @@
     <!-- This one is not specific to Gmail contextual gadgets. -->
     <Require feature="dynamic-height"/>
 	<Require feature="opensocial-0.8" />
+	<Require feature="flash" />
     <Require feature="google.contentmatch">
       <Param name="extractors">google.com:SubjectExtractor,google.com:RawSubjectExtractor,google.com:RecipientEmailExtractor</Param>
     </Require>
@@ -17,31 +18,57 @@
   </ModulePrefs>
  	
   <Content type="html" view="card">
-    <![CDATA[
-      <!-- Start with Single Sign-On -->
-      hello card
-<script type="text/javascript">
-debugger;
-        <!-- Fetch the array of content matches. -->
-        matches = google.contentmatch.getContentMatches();
-        var matchList = document.createElement('UL');
-        var listItem;
-        var extractedText;
+   <![CDATA[
 
-        <!-- Iterate through the array and display output for each match. -->
-        for (var match in matches) {
-          for (var key in matches[match]) {
-            listItem = document.createElement('LI');
-            extractedText = document.createTextNode(key + ": " + matches[match][key]);
-            listItem.appendChild(extractedText);
-            matchList.appendChild(listItem);
-          }
-        }
-        document.body.appendChild(matchList);
-        gadgets.window.adjustHeight(100);
-      </script>
-    ]]>
-  </Content>
+<style type="text/css">
+  input.mybutton
+  {
+     background-color:#FFCC99;
+     border-style:solid;
+     border-color:#000000;
+     font-family:Comic Sans MS,sans-serif;
+     font-size:14px;
+  }
+</style>
+
+<div id="flashcontainer" style="text-align: center;"></div>
+
+<script type="text/javascript">
+
+  // Display still photo.
+  function showPhoto() {
+    document.getElementById("flashcontainer").innerHTML = "<img src='http://doc.examples.googlepages.com/Trevor.JPG' />";
+  }
+
+  // Play .swf file for specified trick.
+  function doTrick(trick) {
+debugger;
+    // The URL for the .swf file that shows the specified trick.
+    var url = "http://doc.examples.googlepages.com/Trevor-"+trick+".swf";
+
+    // Play .swf file.
+      gadgets.flash.embedFlash(url, "flashcontainer", {
+      swf_version: 6,
+      id: "flashid",
+      width: 300,
+      height: 250
+    })
+  }
+
+  // When gadget first loads, display still photo.
+  gadgets.util.registerOnLoadHandler(showPhoto);
+  </script>
+  <br />
+  <div style="text-align: center;">
+    <input type=submit class="mybutton" value="Spin" onClick="doTrick('spin')">
+    <input type=submit class="mybutton" value="Speak" onClick="doTrick('speak')">
+    <input type=submit class="mybutton" value="Sit" onClick="doTrick('sit')">
+    <input type=submit class="mybutton" value="Down" onClick="doTrick('down')">
+    <input type=submit class="mybutton" value="Stop" onClick="showPhoto()">
+  </div>
+  ]]>
+</Content>
+
   
    
 </Module>
