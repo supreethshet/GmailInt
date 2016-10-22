@@ -20,7 +20,7 @@
  	
   <Content type="html" view="card">
  <![CDATA[
-
+<div id="messageBox"></div>
 <style type="text/css">
   input.mybutton
   {
@@ -37,6 +37,11 @@ debugger;
 var msg = new gadgets.MiniMessage(__MODULE_ID__);
 msg.createDismissibleMessage("Please close me when you're done reading me.");
 
+
+  var msg1 = new gadgets.MiniMessage(__MODULE_ID__, document.getElementById("messageBox"));
+  msg1.createDismissibleMessage("I'm the first message.");
+  msg1.createDismissibleMessage("I'm the second message.");
+  msg1.createDismissibleMessage("I'm at the bottom.");
   </script>
   ]]>
 </Content>
