@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-  <ModulePrefs title="In Gadget"
-    description="Pivotal CRM"
+  <ModulePrefs title="Pivotal CRM"
+    description=""
     height="220"
     author="Pivotal"
     author_email="pivotal.aptean@mypivotalcrm.in"
@@ -18,47 +18,41 @@
 
   <Content type="html" view="card">
     <![CDATA[
-      <!-- Start with Single Sign-On -->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <script type="text/javascript">
+    <!-- Start with Single Sign-On -->
+    <script type="text/javascript">
+      debugger;
+      <div id="content_div"></div>
+      function getHtml() {
+      var params = {};
+      params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
+      var url = "http://www.google.com";
+      gadgets.io.makeRequest(url, response, params);
+      };
+      function response(obj) {
+      //obj.text contains the text of the page that was requested
+      var str = obj.text;
+      var html =  str.substr(0,400);
+      document.getElementById('content_div').innerHTML = html;
+      };
+      gadgets.util.registerOnLoadHandler(getHtml);
+      <!-- Fetch the array of content matches. -->
+      matches = google.contentmatch.getContentMatches();
+      var matchList = document.createElement('UL');
+      var listItem;
+      var extractedText;
 
-debugger;
-        <!-- Fetch the array of content matches. -->
-        matches = google.contentmatch.getContentMatches();
-        var matchList = document.createElement('UL');
-        var listItem;
-        var extractedText;
-
- $.ajax({
-                    type: "POST",
-                    url: "https://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest/account/login",
-                    data: { password: "Sep$2016", username: "sshet" },
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    headers: {                     
-                        'pivotalEnvironmentName': 'UX Production',
-                        'demoUser': 'False',                        
-                        'timeZoneOffset': '',                        
-                        'Content-Type': 'application/json; charset=UTF-8',     
-                                         
-                    },
-                    success: function (data) {
-                        console.log('succes: ' + data);
-                    }
-                });
-
-        <!-- Iterate through the array and display output for each match. -->
-        for (var match in matches) {
-          for (var key in matches[match]) {
-            listItem = document.createElement('LI');
-            extractedText = document.createTextNode(key + ": " + matches[match][key]);
-            listItem.appendChild(extractedText);
-            matchList.appendChild(listItem);
-          }
-        }
-        document.body.appendChild(matchList);
-        gadgets.window.adjustHeight(100);
-      </script>
+      <!-- Iterate through the array and display output for each match. -->
+      for (var match in matches) {
+      for (var key in matches[match]) {
+      listItem = document.createElement('LI');
+      extractedText = document.createTextNode(key + ": " + matches[match][key]);
+      listItem.appendChild(extractedText);
+      matchList.appendChild(listItem);
+      }
+      }
+      document.body.appendChild(matchList);
+      gadgets.window.adjustHeight(100);
+    </script>
     ]]>
   </Content>
 </Module>
