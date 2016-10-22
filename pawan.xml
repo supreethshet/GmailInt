@@ -11,6 +11,7 @@
     <Require feature="dynamic-height"/>
 	<Require feature="opensocial-0.8" />
 	<Require feature="flash" />
+	  <Require feature="minimessage"/>
     <Require feature="google.contentmatch">
       <Param name="extractors">google.com:SubjectExtractor,google.com:RawSubjectExtractor,google.com:RecipientEmailExtractor</Param>
     </Require>
@@ -18,7 +19,7 @@
   </ModulePrefs>
  	
   <Content type="html" view="card">
-   <![CDATA[
+ <![CDATA[
 
 <style type="text/css">
   input.mybutton
@@ -31,44 +32,32 @@
   }
 </style>
 
-<div id="flashcontainer" style="text-align: center;"></div>
+<div>
+  <h3>I'm on top now!</h3>
+</div>
+<div id="messageBox"></div>
+
 
 <script type="text/javascript">
+var msg = new gadgets.MiniMessage(__MODULE_ID__);
+msg.createDismissibleMessage("Please close me when you're done reading me.");
 
-  // Display still photo.
-  function showPhoto() {
-    document.getElementById("flashcontainer").innerHTML = "<img src='https://sites.google.com/site/docexamples/Trevor.jpg' />";
-  }
+var msg1 = new gadgets.MiniMessage(__MODULE_ID__, document.getElementById("messageBox"));
+  msg1.createDismissibleMessage("I'm the first message.");
+  msg1.createDismissibleMessage("I'm the second message.");
+  msg1.createDismissibleMessage("I'm at the bottom.");
 
-  // Play .swf file for specified trick.
-  function doTrick(trick) {
-debugger;
-    // The URL for the .swf file that shows the specified trick.
-    var url = "http://doc.examples.googlepages.com/Trevor-"+trick+".swf";
 
-    // Play .swf file.
-      gadgets.flash.embedFlash(url, "flashcontainer", {
-      swf_version: 6,
-      id: "flashid",
-      width: 300,
-      height: 250
-    })
-  }
 
-  // When gadget first loads, display still photo.
-  gadgets.util.registerOnLoadHandler(showPhoto);
   </script>
+
   <br />
   <div style="text-align: center;">
-    <input type=submit class="mybutton" value="Spin" onClick="doTrick('spin')">
-    <input type=submit class="mybutton" value="Speak" onClick="doTrick('speak')">
-    <input type=submit class="mybutton" value="Sit" onClick="doTrick('sit')">
-    <input type=submit class="mybutton" value="Down" onClick="doTrick('down')">
-    <input type=submit class="mybutton" value="Stop" onClick="showPhoto()">
+    <input type=submit class="mybutton" value="Spin">
+   
   </div>
-  ]]>
+  ]]
 </Content>
 
-  
    
 </Module>
