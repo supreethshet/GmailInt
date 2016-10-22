@@ -36,7 +36,9 @@ debugger;
   var msg1 = new gadgets.MiniMessage(__MODULE_ID__, document.getElementById("messageBox"));
   msg1.createDismissibleMessage("I'm the first message.");
 var url="https://ws003lt1502prd.swg.cdc.root/UxWeb/Integration/CallRequest";
-makeRequest(url, response);
+var params = {}; 
+params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
+makeRequest(url, response,params);
 function response(obj) {
    alert(obj.text); 
 };
