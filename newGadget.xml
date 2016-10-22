@@ -31,7 +31,13 @@
       var authorizeButton = document.getElementById('authorize-button');
       var signoutButton = document.getElementById('signout-button');
       
+      gadgets.util.registerOnLoadHandler(auth1);
+      
+      function auth1(){
+      debugger
       gapi.load('client:auth2', initAuth);
+      }
+
       <!--gadgets.util.registerOnLoadHandler(initAuth);-->
       function initAuth() {
       debugger;
@@ -87,13 +93,13 @@
       params[gadgets.io.RequestParameters.HEADERS] = headerData;
      
       gadgets.io.makeRequest(url, response, params);
-      };
+      }
       
 
   function response(obj) {
       debugger;
       output(obj.text);
-      };
+      }
      
      
 
