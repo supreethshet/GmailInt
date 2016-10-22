@@ -11,7 +11,7 @@
     <Require feature="dynamic-height"/>
 	<Require feature="opensocial-0.8" />
     <Require feature="google.contentmatch">
-      <Param name="extractors">google.com:SubjectExtractor</Param>
+      <Param name="extractors">google.com:SubjectExtractor,google.com:RawSubjectExtractor,google.com:RecipientEmailExtractor</Param>
     </Require>
 
   </ModulePrefs>
@@ -43,17 +43,5 @@ debugger;
     ]]>
   </Content>
   
-    <Content type="html" view="canvas">
-    <![CDATA[
-      <!-- Start with Single Sign-On -->
-      hello canvas
-    ]]>
-  </Content>
-  
-    <Content type="html" view="home">
-    <![CDATA[
-      <!-- Start with Single Sign-On -->
-      hello home
-    ]]>
-  </Content>
+   
 </Module>
