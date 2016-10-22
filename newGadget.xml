@@ -44,7 +44,7 @@
         gapi.client.setApiKey('AIzaSyBoOzoEZpI1nQgWSM6kc6JAR7LOLrQjU6Y');
         gapi.auth2.init({
             client_id: '2706542340-bas1sq1nenmhi51ln6o4ddv68u7vpmaf.apps.googleusercontent.com',
-            scope: 'profile'
+            scope: 'fetch_basic_profile'
         }).then(function(){
           auth2 = gapi.auth2.getAuthInstance();
         
