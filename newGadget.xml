@@ -19,25 +19,61 @@
   <Content type="html" view="card">
     <![CDATA[
     <!-- Start with Single Sign-On -->
-    <div id="content_div"></div>
-<script src="https://apis.google.com/js/api.js"></script>
+          <div id="content_div"></div>
+     <button id="authorize-button" style="display: none;">Authorize</button>
+    <button id="signout-button" style="display: none;">Sign Out</button>
+    
+    <script src="https://apis.google.com/js/api.js"></script>
     <script type="text/javascript">
-
- gadgets.util.registerOnLoadHandler(initAuth);
+      
+      debugger;
+      var auth2;
+      var authorizeButton = document.getElementById('authorize-button');
+      var signoutButton = document.getElementById('signout-button');
+      
+      gapi.load('client:auth2', initAuth);
+      <!--gadgets.util.registerOnLoadHandler(initAuth);-->
       function initAuth() {
+      debugger;
         gapi.client.setApiKey('AIzaSyBoOzoEZpI1nQgWSM6kc6JAR7LOLrQjU6Y');
         gapi.auth2.init({
             client_id: '2706542340-bas1sq1nenmhi51ln6o4ddv68u7vpmaf.apps.googleusercontent.com',
-            scope: 'Pivotal Gmail Integration'
+            scope: 'profile'
+        }).then(function(){
+          auth2 = gapi.auth2.getAuthInstance();
+        
+          auth2.isSignedIn.listen(updateSigninStatus);
+     
+          updateSigninStatus(auth2.isSignedIn.get());
+          authorizeButton.onclick = handleAuthClick;
+          signoutButton.onclick = handleSignoutClick;
         }); 
-      }     
-       function auth() {
-        gapi.auth2.getAuthInstance().signIn().then(function() {
+      }(); 
+      
+      
+      function handleAuthClick(event) {
+      debugger;
+        auth2.signIn().then(function() {
           makePOSTRequest("https://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest/account/login", data);
         });
       }
       
-      gapi.load('client:auth2', auth);      
+      function handleSignoutClick(event) {
+        auth2.signOut();
+      }
+      
+      function updateSigninStatus(isSignedIn) {
+            debugger;
+        if (isSignedIn) {
+          authorizeButton.style.display = 'none';
+          signoutButton.style.display = 'block';
+          makeApiCall();
+        } else {
+          authorizeButton.style.display = 'block';
+          signoutButton.style.display = 'none';
+        }
+      }    
+
       function makePOSTRequest(url, postdata) {      
       
       var params = {};
