@@ -11,7 +11,7 @@
     <Require feature="dynamic-height"/>
 	<Require feature="opensocial-0.8" />
 	<Require feature="flash" />
-	  <Require feature="minimessage"/>
+	<Require feature="minimessage"/>
     <Require feature="google.contentmatch">
       <Param name="extractors">google.com:SubjectExtractor,google.com:RawSubjectExtractor,google.com:RecipientEmailExtractor</Param>
     </Require>
@@ -39,6 +39,7 @@
 
 
 <script type="text/javascript">
+debugger;
 var msg = new gadgets.MiniMessage(__MODULE_ID__);
 msg.createDismissibleMessage("Please close me when you're done reading me.");
 
