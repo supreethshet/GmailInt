@@ -16,7 +16,7 @@
 
   </ModulePrefs>
 
-  <Content type="html" view="card">
+  <Content type="html" view="canvas">
     <![CDATA[
       <!-- Start with Single Sign-On -->
       hello card
@@ -42,18 +42,6 @@ debugger;
       </script>
     ]]>
   </Content>
-    <Content type="html" view="canvas">
-    <![CDATA[
-      <!-- Start with Single Sign-On -->
-      hello canvas
-    ]]>
-  </Content>
   
-    <Content type="html" view="home">
-    <![CDATA[
-      <!-- Start with Single Sign-On -->
-      hello home
-    ]]>
-  </Content>
    
 </Module>
