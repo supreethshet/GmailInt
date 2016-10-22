@@ -23,6 +23,7 @@
     <script type="text/javascript">
       debugger;
       function makePOSTRequest(url, postdata) {
+
       var params = {};
       var headers = {pivotalEnvironmentName:"UX Production",demoUser:"False",timeZoneOffset:"","Content-Type":"application/json; charset=UTF-8"};
       headerData = gadgets.io.encodeValues(headers);
