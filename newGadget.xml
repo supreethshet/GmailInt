@@ -20,7 +20,7 @@
     <![CDATA[
     <!-- Start with Single Sign-On -->
           <div id="content_div"></div>
-     <INPUT TYPE="button" NAME="Authorize" Value="Authorize" id="authorize-button">
+     <INPUT TYPE="button" NAME="Authorize" Value="Authorize" id="authorize-button" onClick="handleAuthClick()">
   <INPUT TYPE="button" NAME="Sign Out" Value="Sign Out" id="signout-button">
     
     <script src="https://apis.google.com/js/api.js"></script>
