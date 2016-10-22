@@ -4,7 +4,7 @@
     description=""
     height="220"
     author="Pivotal"
-    author_email="pivotal.aptean@mypivotalcrm.in"
+    author_email="pawan.ch@mypivotalcrm.in"
     author_location="In Gadget, Earth">
 
     <!-- This one is not specific to Gmail contextual gadgets. -->
@@ -19,9 +19,9 @@
   <Content type="html" view="card">
     <![CDATA[
     <!-- Start with Single Sign-On -->
+    <div id="content_div"></div>
     <script type="text/javascript">
       debugger;
-      <div id="content_div"></div>
       function getHtml() {
       var params = {};
       params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
