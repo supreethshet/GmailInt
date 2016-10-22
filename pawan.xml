@@ -37,7 +37,7 @@
 
   // Display still photo.
   function showPhoto() {
-    document.getElementById("flashcontainer").innerHTML = "<img src='http://doc.examples.googlepages.com/Trevor.JPG' />";
+    document.getElementById("flashcontainer").innerHTML = "<img src='https://sites.google.com/site/docexamples/Trevor.jpg' />";
   }
 
   // Play .swf file for specified trick.
