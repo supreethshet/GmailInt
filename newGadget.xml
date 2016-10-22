@@ -21,8 +21,9 @@
     <!-- Start with Single Sign-On -->
     <div id="content_div"></div>
     <script type="text/javascript">
-      debugger;
+      
       function makePOSTRequest(url, postdata) {
+      debugger;
       var params = {};
       var headers = {pivotalEnvironmentName:"UX Production",demoUser:"False",timeZoneOffset:""};
       headerData = gadgets.io.encodeValues(headers);
