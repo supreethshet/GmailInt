@@ -32,25 +32,13 @@
   }
 </style>
 
-<div>
-  <h3>I'm on top now!</h3>
-</div>
-<div id="messageBox"></div>
-
-
 <script type="text/javascript">
 debugger;
 var msg = new gadgets.MiniMessage(__MODULE_ID__);
 msg.createDismissibleMessage("Please close me when you're done reading me.");
 
   </script>
-
-  <br />
-  <div style="text-align: center;">
-    <input type=submit class="mybutton" value="Spin">
-   
-  </div>
-  ]]
+  ]]>
 </Content>
 
    
