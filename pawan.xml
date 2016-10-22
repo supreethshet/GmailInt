@@ -16,7 +16,7 @@
 
   </ModulePrefs>
 
-  <Content type="html" view="canvas">
+  <Content type="html" view="card">
     <![CDATA[
       <!-- Start with Single Sign-On -->
       hello card
