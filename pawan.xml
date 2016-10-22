@@ -15,8 +15,18 @@
     </Require>
 
   </ModulePrefs>
-
+ <Content type="html" view="home">
+    <![CDATA[
+      Hello, small world!
+    ]]>
+  </Content>
   <Content type="html" view="canvas">
+    <![CDATA[
+      Hello, big world!
+    ]]>
+  </Content>
+	
+  <Content type="html" view="profile">
     <![CDATA[
       <!-- Start with Single Sign-On -->
       hello card
