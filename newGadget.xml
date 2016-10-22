@@ -20,18 +20,33 @@
     <![CDATA[
     <!-- Start with Single Sign-On -->
     <div id="content_div"></div>
+<script src="https://apis.google.com/js/api.js"></script>
     <script type="text/javascript">
+
+ gadgets.util.registerOnLoadHandler(initAuth);
+      function initAuth() {
+        gapi.client.setApiKey('AIzaSyBoOzoEZpI1nQgWSM6kc6JAR7LOLrQjU6Y');
+        gapi.auth2.init({
+            client_id: '2706542340-bas1sq1nenmhi51ln6o4ddv68u7vpmaf.apps.googleusercontent.com',
+            scope: 'Pivotal Gmail Integration'
+        }); 
+      }     
+       function auth() {
+        gapi.auth2.getAuthInstance().signIn().then(function() {
+          makePOSTRequest("https://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest/account/login", data);
+        });
+      }
       
-      function makePOSTRequest(url, postdata) {
-      debugger;
+      gapi.load('client:auth2', auth);      
+      function makePOSTRequest(url, postdata) {      
+      
       var params = {};
-      var headers = {pivotalEnvironmentName:"UX Production",demoUser:"False",timeZoneOffset:""};
+      var headers = {pivotalEnvironmentName:"UX Production",demoUser:"False",timeZoneOffset:"","Content-Type":"application/json; charset=UTF-8"};
       headerData = gadgets.io.encodeValues(headers);
       postdata = gadgets.io.encodeValues(postdata);
       params[gadgets.io.RequestParameters.POST_DATA]= postdata;
       params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
       params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-      params[gadgets.io.RequestParameters.AUTHORIZATION] = gadgets.io.AuthorizationType.OAUTH;
       params[gadgets.io.RequestParameters.HEADERS] = headerData;
      
       gadgets.io.makeRequest(url, response, params);
@@ -41,9 +56,10 @@
       output(obj.text);
       };
       var data = {password: "Sep$2016", username: "sshet"};
-      makePOSTRequest("https://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest/account/login", data);
+     
 
       gadgets.window.adjustHeight(100);
+
     </script>
     ]]>
   </Content>
