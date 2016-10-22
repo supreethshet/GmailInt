@@ -34,7 +34,7 @@
       gadgets.util.registerOnLoadHandler(auth1);
       
       function auth1(){
-      debugger
+      debugger;
       gapi.load('client:auth2', initAuth);
       }
 
@@ -54,7 +54,7 @@
           authorizeButton.onclick = handleAuthClick;
           signoutButton.onclick = handleSignoutClick;
         }); 
-      }(); 
+      }
       
       
       function handleAuthClick(event) {
