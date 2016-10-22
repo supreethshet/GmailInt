@@ -85,7 +85,7 @@
       debugger;
       var params = {};
       var headers = {pivotalEnvironmentName:"UX Production",demoUser:"False",timeZoneOffset:"","Content-Type":"application/json; charset=UTF-8"};
-     // headerData = gadgets.io.encodeValues(headers);
+
       postdata = gadgets.io.encodeValues(postdata);
       params[gadgets.io.RequestParameters.POST_DATA]= postdata;
       params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
