@@ -21,7 +21,7 @@
   <Content type="html" view="card">
  <![CDATA[
 <div id="messageBox"></div>
- <div id="1" class="objects" style="background-image:url('images/dog right.png');background-repeat:no-repeat;background-size:100% 100%;"></div>
+ <div id="1" style="background-image:url('https://github.com/supreethshet/GmailInt/blob/master/login_background.jpg');background-repeat:no-repeat;background-size:100% 100%;"></div>
        
 <style type="text/css">
   input.mybutton
