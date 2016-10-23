@@ -21,9 +21,9 @@
   <Content type="html" view="card">
  <![CDATA[
 <div id="messageBox"></div>
- <div id="backgroundimage" style="background-image:url('login_background.jpg');background-repeat:no-repeat;background-size:100% 100%;width:100px;height:100px;">
+ <div id="backgroundimage" style="background-image:url('login_background.jpg');background-repeat:no-repeat;background-size:100% 100%;width:200px;height:200px;">
 
- <FORM NAME="myform" ACTION="" METHOD="GET"><BR>
+ <FORM NAME="myform" ACTION="" METHOD="GET" style="margin-left:500px;margin-top:50px;"><BR>
   <INPUT TYPE="text" NAME="username" placeholder="USER NAME"><br><br>
   <INPUT TYPE="text" NAME="password" placeholder="PASSWORD"><br><br>
   <INPUT TYPE="button" NAME="signin" Value="SIGN IN"><br><br>
