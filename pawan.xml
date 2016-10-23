@@ -21,7 +21,6 @@
   <Content type="html" view="card">
  <![CDATA[
 <div id="messageBox"></div>
- <div id="backgroundimage" style="background-image:url('GmailInt/login_background.jpg');background-repeat:no-repeat;background-size:100% 100%;width:200px;height:150px;"></div>
  <FORM NAME="myform" ACTION="" METHOD="GET"><BR>
   <INPUT TYPE="text" NAME="username" placeholder="USER NAME">
   <INPUT TYPE="text" NAME="password" placeholder="PASSWORD">
@@ -42,15 +41,7 @@
 debugger;
   var msg1 = new gadgets.MiniMessage(__MODULE_ID__, document.getElementById("messageBox"));
   msg1.createDismissibleMessage("I'm the first message.");
-var url="https://ws003lt1502prd.swg.cdc.root/UxWeb/Integration/CallRequest";
-var params = {}; 
-params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
-gadgets.io.makeRequest(url, response,params);
-function response(obj) {
-   alert(obj.text); 
-};
-  msg1.createDismissibleMessage("I'm the second message.");
-  msg1.createDismissibleMessage("I'm at the bottom.");
+
   </script>
   ]]>
 </Content>
