@@ -33,13 +33,12 @@
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
         var headers = {pivotalEnvironmentName:"UX Production",demoUser:"False",timeZoneOffset:"","Content-Type":"application/json; charset=UTF 8"};
-        headerData = gadgets.io.encodeValues(headers);
         postdata = gadgets.io.encodeValues(postdata);
         params[gadgets.io.RequestParameters.POST_DATA]= postdata;
         params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 	params[gadgets.io.RequestParameters.AUTHORIZATION] = gadgets.io.AuthorizationType.OAUTH;
-        params[gadgets.io.RequestParameters.HEADERS] = headerData;
+        params[gadgets.io.RequestParameters.HEADERS] = headers;
        
         gadgets.io.makeRequest(url, response, params);
         };
