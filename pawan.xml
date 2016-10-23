@@ -21,8 +21,13 @@
   <Content type="html" view="card">
  <![CDATA[
 <div id="messageBox"></div>
- <div id="1" style="background-image:url('GmailInt/login_background.jpg');background-repeat:no-repeat;background-size:100% 100%;width:200px;height:150px;"></div>
-       
+ <div id="backgroundimage" style="background-image:url('GmailInt/login_background.jpg');background-repeat:no-repeat;background-size:100% 100%;width:200px;height:150px;"></div>
+ <FORM NAME="myform" ACTION="" METHOD="GET"><BR>
+  <INPUT TYPE="text" NAME="username" VALUE="">
+  <INPUT TYPE="text" NAME="password" VALUE="">
+  <INPUT TYPE="button" NAME="signin" Value="SIGN IN">
+  <INPUT TYPE="button" NAME="demo" Value="DEMO">
+  </FORM>      
 <style type="text/css">
   input.mybutton
   {
