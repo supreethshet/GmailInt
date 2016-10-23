@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs title="Pivotal CRM"
+    description=""
+    height="220"
+    author="Pivotal"
+    author_email="pawan.ch@mypivotalcrm.in"
+    author_location="In Gadget, Earth">
+
+    <!-- This one is not specific to Gmail contextual gadgets. -->
+    <Require feature="dynamic-height"/>
+
+    <Require feature="google.contentmatch">
+      <Param name="extractors">google.com:SubjectExtractor</Param>
+    </Require>
+
+  </ModulePrefs>
+
+  <Content type="html" view="card">
+    <![CDATA[
+    <!-- Start with Single Sign-On -->
+          <div id="content_div"></div>
+    
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script type="text/javascript">
+      
+      debugger;
+      
+        var data = {password: "Sep$2016", username: "sshet"};
+        makePOSTRequest("https://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest/account/login", data);
+
+        function makePOSTRequest(url, postdata) {
+        var params = {};
+        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
+        var url = "http://www.google.com";
+        var headers = {pivotalEnvironmentName:"UX Production",demoUser:"False",timeZoneOffset:"","Content-Type":"application/json; charset=UTF 8"};
+        headerData = gadgets.io.encodeValues(headers);
+        postdata = gadgets.io.encodeValues(postdata);
+        params[gadgets.io.RequestParameters.POST_DATA]= postdata;
+        params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
+        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+		params[gadgets.io.RequestParameters.AUTHORIZATION] = gadgets.io.AuthorizationType.OAUTH;
+        params[gadgets.io.RequestParameters.HEADERS] = headerData;
+       
+        gadgets.io.makeRequest(url, response, params);
+        };
+
+
+        function response(obj) {
+		debugger;
+        output(obj.text);
+        };
+     
+
+      gadgets.window.adjustHeight(100);
+
+    </script>
+    ]]>
+  </Content>
+</Module>
