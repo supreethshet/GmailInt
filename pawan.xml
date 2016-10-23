@@ -21,7 +21,7 @@
   <Content type="html" view="card">
  <![CDATA[
 <div id="messageBox"></div>
- <div id="backgroundimage" style="background-image:url('GmailInt/login_background.jpg');background-repeat:no-repeat;background-size:100% 100%;width:100px;height:100px;">
+ <div id="backgroundimage" style="background-image:url('login_background.jpg');background-repeat:no-repeat;background-size:100% 100%;width:100px;height:100px;">
 
  <FORM NAME="myform" ACTION="" METHOD="GET"><BR>
   <INPUT TYPE="text" NAME="username" placeholder="USER NAME"><br>
