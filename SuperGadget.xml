@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
   <ModulePrefs title="Super Gadget"
-    description=""
+    description="Supreeth"
     height="220"
     author="Pivotal"
     author_email="pawan.ch@mypivotalcrm.in"
@@ -38,7 +38,7 @@
         params[gadgets.io.RequestParameters.POST_DATA]= postdata;
         params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-	params[gadgets.io.RequestParameters.AUTHORIZATION] = gadgets.io.AuthorizationType.SIGNED;
+	params[gadgets.io.RequestParameters.AUTHORIZATION] = gadgets.io.AuthorizationType.OAUTH;
         params[gadgets.io.RequestParameters.HEADERS] = headerData;
        
         gadgets.io.makeRequest(url, response, params);
