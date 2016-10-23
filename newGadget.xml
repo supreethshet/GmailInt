@@ -21,12 +21,10 @@
     <!-- Start with Single Sign-On -->
           <div id="content_div"></div>
      <INPUT TYPE="button" NAME="Authorize" Value="Authorize" id="authorize-button">
-  <INPUT TYPE="button" NAME="Sign Out" Value="Sign Out" id="signout-button">
+     <INPUT TYPE="button" NAME="Sign Out" Value="Sign Out" id="signout-button">
     
     <script src="https://apis.google.com/js/api.js"></script>
     <script type="text/javascript">
-      
-      debugger;
       var auth2;
       var authorizeButton = document.getElementById('authorize-button');
       var signoutButton = document.getElementById('signout-button');
@@ -34,13 +32,11 @@
       gadgets.util.registerOnLoadHandler(auth1);
       
       function auth1(){
-      debugger;
       gapi.load('client:auth2', initAuth);
       }
 
       <!--gadgets.util.registerOnLoadHandler(initAuth);-->
       function initAuth() {
-      debugger;
         gapi.client.setApiKey('AIzaSyBoOzoEZpI1nQgWSM6kc6JAR7LOLrQjU6Y');
         gapi.auth2.init({
             client_id: '2706542340-bas1sq1nenmhi51ln6o4ddv68u7vpmaf.apps.googleusercontent.com',
@@ -57,12 +53,9 @@
       }
       
       
-      function handleAuthClick(event) {
-      debugger;
-        
+      function handleAuthClick(event) {        
           var data = {password: "Sep$2016", username: "sshet"};
-          makePOSTRequest("https://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest/account/login", data);
-       
+          makePOSTRequest("https://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest/account/login", data);       
       }
       
       function handleSignoutClick(event) {
@@ -70,7 +63,6 @@
       }
       
       function updateSigninStatus(isSignedIn) {
-            debugger;
         if (isSignedIn) {
           authorizeButton.style.display = 'none';
           signoutButton.style.display = 'block';
