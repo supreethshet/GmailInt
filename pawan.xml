@@ -22,9 +22,9 @@
  <![CDATA[
 <div id="messageBox"></div>
  <FORM NAME="myform" ACTION="" METHOD="GET"><BR>
-  <INPUT TYPE="text" NAME="username" placeholder="USER NAME">
-  <INPUT TYPE="text" NAME="password" placeholder="PASSWORD">
-  <INPUT TYPE="button" NAME="signin" Value="SIGN IN">
+  <INPUT TYPE="text" NAME="username" placeholder="USER NAME"><br>
+  <INPUT TYPE="text" NAME="password" placeholder="PASSWORD"><br>
+  <INPUT TYPE="button" NAME="signin" Value="SIGN IN"><br>
   <INPUT TYPE="button" NAME="demo" Value="DEMO">
   </FORM>      
 <style type="text/css">
@@ -41,7 +41,15 @@
 debugger;
   var msg1 = new gadgets.MiniMessage(__MODULE_ID__, document.getElementById("messageBox"));
   msg1.createDismissibleMessage("I'm the first message.");
+ var params = {};  
+    params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;  
+    var url = "https://ws003lt1502prd.swg.cdc.root/pivotalux/";
+    gadgets.io.makeRequest(url, response, params);
 
+	function response(obj) {               
+	    var responseText = obj.text;
+		alert(responseText);
+	}
   </script>
   ]]>
 </Content>
