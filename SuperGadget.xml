@@ -27,7 +27,7 @@
       debugger;
       
         var data = {password: "Sep$2016", username: "sshet"};
-        makePOSTRequest("https://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest/account/login", data);
+        makePOSTRequest("http://ws003lt1750prd.swg.cdc.root/PivotalRestClient/rest/account/login", data);
 
         function makePOSTRequest(url, postdata) {
         var params = {};
