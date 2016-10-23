@@ -24,9 +24,9 @@
  <div id="backgroundimage" style="background-image:url('login_background.jpg');background-repeat:no-repeat;background-size:100% 100%;width:100px;height:100px;">
 
  <FORM NAME="myform" ACTION="" METHOD="GET"><BR>
-  <INPUT TYPE="text" NAME="username" placeholder="USER NAME"><br>
-  <INPUT TYPE="text" NAME="password" placeholder="PASSWORD"><br>
-  <INPUT TYPE="button" NAME="signin" Value="SIGN IN"><br>
+  <INPUT TYPE="text" NAME="username" placeholder="USER NAME"><br><br>
+  <INPUT TYPE="text" NAME="password" placeholder="PASSWORD"><br><br>
+  <INPUT TYPE="button" NAME="signin" Value="SIGN IN"><br><br>
   <INPUT TYPE="button" NAME="demo" Value="DEMO">
   </FORM>      
   </div>
