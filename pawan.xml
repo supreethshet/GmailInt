@@ -21,7 +21,7 @@
   <Content type="html" view="card">
  <![CDATA[
 <div id="messageBox"></div>
- <div id="backgroundimage" style="background-image:url('login_background.jpg');background-repeat:no-repeat;background-size:100% 100%;width:200px;height:200px;">
+ <div id="backgroundimage" class="background-image">
 
  <FORM NAME="myform" ACTION="" METHOD="GET" style="margin-left:500px;margin-top:50px;"><BR>
   <INPUT TYPE="text" NAME="username" placeholder="USER NAME"><br><br>
@@ -31,6 +31,18 @@
   </FORM>      
   </div>
 <style type="text/css">
+	.background-image
+	{
+	    position:absolute;
+	    width: 100%;
+	    height:80%;
+	    left:0%;
+	    top:0%;
+	   background-image:url('https://github.com/supreethshet/GmailInt/blob/master/login_background.jpg');
+	   background-repeat:no-repeat;
+	   background-size:100% 100%;
+	}
+
   input.mybutton
   {
      background-color:#FFCC99;
