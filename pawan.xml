@@ -23,7 +23,7 @@
 <div id="messageBox"></div>
  <div id="backgroundimage" class="background-image">
 
- <FORM NAME="myform" ACTION="" METHOD="GET" style="margin-left:500px;margin-top:50px;"><BR>
+ <FORM NAME="myform" ACTION="" METHOD="GET" style="margin-left:400px;margin-top:50px;"><BR>
   <INPUT TYPE="text" NAME="username" placeholder="USER NAME"><br><br>
   <INPUT TYPE="text" NAME="password" placeholder="PASSWORD"><br><br>
   <INPUT TYPE="button" NAME="signin" Value="SIGN IN"><br><br>
@@ -38,7 +38,7 @@
 	    height:80%;
 	    left:0%;
 	    top:0%;
-	   background-image:url('https://github.com/supreethshet/GmailInt/blob/master/login_background.jpg');
+	   background-image:url('GmailInt/login_background.jpg');
 	   background-repeat:no-repeat;
 	   background-size:100% 100%;
 	}
